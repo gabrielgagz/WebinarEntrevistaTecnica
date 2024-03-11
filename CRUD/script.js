@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const listItem = document.createElement('li');
             listItem.innerHTML = `
                 ${item}
-                <button onclick="editItem(${index})">Editar</button>
-                <button onclick="deleteItem(${index})">Eliminar</button>
+                <button onclick="editItem(${index})" class="btn btn-outline-primary btn-sm">Editar</button>
+                <button onclick="deleteItem(${index})" class="btn btn-outline-danger btn-sm">Eliminar</button>
             `;
             itemList.appendChild(listItem);
         });
