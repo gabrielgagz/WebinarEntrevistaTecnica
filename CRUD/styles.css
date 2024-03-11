@@ -27,3 +27,35 @@ input {
     padding: 6px 32px;
     text-align: center;
 }
+
+.btn-list-edit, .btn-list-delete {
+    padding: 0px 8px 0px 8px;
+    font-size: x-small;
+}
+
+.btn-list-delete:hover {
+    background-color: white;
+    border-color:#c70000;
+    color:#c70000;
+}
+
+.btn-list-edit:hover {
+    background-color: white;
+    border-color:#12a390;
+    color:#12a390;
+}
+
+.bg-color-teclab {
+    background-color: rgba(39,130,187,255);
+}
+
+input:focus {
+    background-color: #fff;
+    border: 2px solid #f6f6f6;
+    border-bottom: 2px solid rgba(39,130,187,255);
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}

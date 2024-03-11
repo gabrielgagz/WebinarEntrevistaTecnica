@@ -10,11 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         items.forEach(function (item, index) {
             const listItem = document.createElement('li');
-            listItem.className="list-group-item";
+            listItem.className="list-group-item text-muted";
             listItem.innerHTML = `
-                ${item}
-                <button onclick="editItem(${index})" class="btn btn-primary btn-sm ms-2">Editar</button>
-                <button onclick="deleteItem(${index})" class="btn btn-danger btn-sm">Eliminar</button>
+            <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4z"/>
+            </svg> 
+            ${item}
+            <button onclick="editItem(${index})" class="btn btn-outline-secondary btn-list-edit ms-5">Editar</button>
+            <button onclick="deleteItem(${index})" class="btn btn-outline-secondary btn-list-delete">Eliminar</button>
             `;
             itemList.appendChild(listItem);
         });
