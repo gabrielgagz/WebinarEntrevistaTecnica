@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog con CRUD</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Blog con CRUD</h1>
+        
+        <!-- Formulario para agregar una nueva entrada -->
+        <form id="blogForm">
+            <label for="title">Título:</label>
+            <input type="text" id="title" required>
+            <label for="content">Contenido:</label>
+            <textarea id="content" rows="4" required></textarea>
+            <button type="submit">Publicar</button>
+        </form>
+
+        <!-- Lista de entradas -->
+        <ul id="blogList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
