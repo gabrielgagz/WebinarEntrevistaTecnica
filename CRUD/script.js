@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    
+
     // Obtener la lista de elementos desde el LocalStorage o inicializarla si no existe
     let items = JSON.parse(localStorage.getItem('items')) || [];
 
@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
             listItem.className="list-group-item";
             listItem.innerHTML = `
                 ${item}
-                <button onclick="editItem(${index})" class="btn btn-outline-primary btn-sm ms-2">Editar</button>
-                <button onclick="deleteItem(${index})" class="btn btn-outline-danger btn-sm">Eliminar</button>
+                <button onclick="editItem(${index})" class="btn btn-primary btn-sm ms-2">Editar</button>
+                <button onclick="deleteItem(${index})" class="btn btn-danger btn-sm">Eliminar</button>
             `;
             itemList.appendChild(listItem);
         });
