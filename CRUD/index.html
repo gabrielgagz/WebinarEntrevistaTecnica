@@ -10,16 +10,18 @@
 <body>
     <div class="container-fluid">
         <!-- Formulario para agregar nuevos elementos -->
-        <div class="d-flex align-items-center flex-column border p-5">
-            <h1 class="mt-4 mb-0 display-5">Webinar TecLab</h3>
-            <p class="lead mt-0">CRUD Simple</h3>
-            <form id="crudForm" class="m-5">
-                <label for="itemName">Nombre del Elemento:</label>
-                <input type="text" id="itemName" required>
-                <button type="submit" class="btn btn-success">Agregar</button>
-            </form>
-            <!-- Lista de elementos -->
-            <ul id="itemList" class="list-group"></ul>
+        <div class="containerChild border w-50 mt-3 pt-2 pb-5">
+            <div class="d-flex align-items-center flex-column">
+                <h1 class="mt-4 mb-0 display-5">Webinar TecLab</h3>
+                <p class="lead mt-0">CRUD Simple</h3>
+                <form id="crudForm" class="m-5">
+                    <label for="itemName">Nombre del Elemento:</label>
+                    <input type="text" id="itemName" required>
+                    <button type="submit" class="btn btn-success">Agregar</button>
+                </form>
+                <!-- Lista de elementos -->
+                <ul id="itemList" class="list-group"></ul>
+            </div>
         </div>
     </div>
     <script src="script.js" />
