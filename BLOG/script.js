@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     let entries = JSON.parse(localStorage.getItem('blogEntries')) || [];
-    console.log(entries)
 
     function renderEntries() {
 
