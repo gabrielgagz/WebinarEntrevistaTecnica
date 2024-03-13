@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (entry.image == '') {entry.image ='img/fallback.jpeg'}
 
                 listItem.innerHTML = `
-                <div class="card border-0 shadow mt-4">
+                <div class="card border-0 shadow mt-4 me-4">
                     <img src="${entry.image}" class="card-img-top" alt="Modal Image">
                     <div class="card-body">
                         <h5 class="card-title">${entry.title}</h5>
