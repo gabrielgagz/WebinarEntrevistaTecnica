@@ -1,20 +1,32 @@
 document.addEventListener('DOMContentLoaded', function () {
     let entries = JSON.parse(localStorage.getItem('blogEntries')) || [];
+    console.log(entries)
 
     function renderEntries() {
-        const blogList = document.getElementById('blogList');
-        blogList.innerHTML = '';
 
-        entries.forEach(function (entry, index) {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `
-                <h2>${entry.title}</h2>
-                <p>${entry.content}</p>
-                <button onclick="editEntry(${index})">Editar</button>
-                <button onclick="deleteEntry(${index})">Eliminar</button>
-            `;
-            blogList.appendChild(listItem);
-        });
+        const blogList = document.getElementById('blogList');
+
+        if ( entries.length == 0 ) {
+            blogList.innerHTML = 'No hay entradas';
+        }
+        else {
+            // Reseteamos
+            blogList.innerHTML = '';
+
+            // Escribimos los elemntos
+            entries.forEach(function (entry, index) {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <h2>${entry.title}</h2>
+                    <p>${entry.image}</p>
+                    <p>${entry.content}</p>
+                    <button onclick="editEntry(${index})">Editar</button>
+                    <button onclick="deleteEntry(${index})">Eliminar</button>
+                `;
+                blogList.appendChild(listItem);
+            });
+        }
+
     }
 
     document.getElementById('blogForm').addEventListener('submit', function (event) {
