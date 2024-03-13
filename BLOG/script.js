@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    // Cargamos los datos almacenados en LocalStorage (si existen)
     let entries = JSON.parse(localStorage.getItem('blogEntries')) || [];
 
     function renderEntries() {
@@ -9,10 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
             blogList.innerHTML = 'No hay entradas';
         }
         else {
+            
             // Reseteamos
             blogList.innerHTML = '';
 
-            // Escribimos los elemntos
+            // Escribimos los elementos
             entries.forEach(function (entry, index) {
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `
@@ -28,19 +31,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
+    // Eliminamos el modal después de enviar los datos a través del formulario
+    // TODO: implementar una mejor solución
+    function removeModal() {
+        document.getElementById('closeButton').click();
+    }
+
+    // Anviamos los datos del formulario a LocalStorage
     document.getElementById('blogForm').addEventListener('submit', function (event) {
+
         event.preventDefault();
+        
         const newEntry = {
             title: document.getElementById('title').value,
-            content: document.getElementById('content').value
+            content: document.getElementById('content').value,
+            image: document.getElementById('image').value
         };
 
         entries.push(newEntry);
         localStorage.setItem('blogEntries', JSON.stringify(entries));
         renderEntries();
         document.getElementById('blogForm').reset();
+        removeModal();
+        
     });
 
+    // PARA ESTUDIANTES: Tarea 1
+    // Utilizar modal de Bootstrap
     window.editEntry = function (index) {
         const updatedTitle = prompt('Editar título:', entries[index].title);
         const updatedContent = prompt('Editar contenido:', entries[index].content);
@@ -53,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
+    // PARA ESTUDIANTES: Tarea 2
+    // Utilizar modal de Bootstrap
     window.deleteEntry = function (index) {
         const confirmDelete = confirm('¿Estás seguro de eliminar esta entrada?');
         if (confirmDelete) {
