@@ -29,18 +29,6 @@ textarea {
     margin-bottom: 10px;
 }
 
-button {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
 ul {
     list-style: none;
     padding: 0;
@@ -58,4 +46,8 @@ li h2 {
 
 li p {
     margin-bottom: 0;
+}
+
+.bg-color-teclab {
+    background-color: rgba(39,130,187,255);
 }
