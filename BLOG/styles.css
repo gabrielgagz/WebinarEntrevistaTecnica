@@ -69,3 +69,7 @@ li p {
 .btn-rounded:hover {
     opacity: 100%;
 }
+
+.modal-header {
+    color: white;
+}

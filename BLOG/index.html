@@ -11,13 +11,13 @@
     <div class="container">
         <h1>Blog con CRUD</h1>
     
-        <button type="submit" class="btn-rounded bg-color-teclab border-0" data-bs-toggle="modal" data-bs-target="#formModal">+</button>
+        <button type="submit" class="btn-rounded bg-color-teclab border-0 shadow" data-bs-toggle="modal" data-bs-target="#formModal">+</button>
 
         <!-- Modal -->
-    <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
+    <div class="modal fade " data-bs-backdrop="static" data-bs-keyboard="false" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
+        <div class="modal-content border-0">
+            <div class="modal-header bg-color-teclab">
             <h1 class="modal-title fs-5" id="formModalLabel">Publicar Nuevo Artículo</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -25,11 +25,11 @@
                 <!-- Formulario para agregar una nueva entrada -->
                 <form id="blogForm">
                     <label for="title">Título:</label>
-                    <input type="text" id="title" required>
+                    <input type="text" class="form-control" id="title" required>
                     <label for="image">Imagen:</label>
-                    <input type="text" id="image" required>
+                    <input type="text" class="form-control" id="image" required>
                     <label for="content">Contenido:</label>
-                    <textarea id="content" rows="4" required></textarea>
+                    <textarea id="content" class="form-control" rows="4" required></textarea>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-primary bg-color-teclab border-0">Publicar</button>
                 </form>
