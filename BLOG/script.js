@@ -8,7 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const blogList = document.getElementById('blogList');
 
         if ( entries.length == 0 ) {
-            blogList.innerHTML = 'No hay entradas';
+            blogList.innerHTML = `
+            <div class="d-flex justify-content-center">
+                <div class="alert alert-danger mt-4 text-center text-red" role="alert">
+                    No se encontró ningún post para mostrar.
+                </div>
+            </div>`;
         }
         else {
             
@@ -17,13 +22,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Escribimos los elementos
             entries.forEach(function (entry, index) {
-                const listItem = document.createElement('li');
+                const listItem = document.createElement('div');
                 listItem.innerHTML = `
-                    <h2>${entry.title}</h2>
-                    <p>${entry.image}</p>
-                    <p>${entry.content}</p>
-                    <button onclick="editEntry(${index})">Editar</button>
-                    <button onclick="deleteEntry(${index})">Eliminar</button>
+                <div class="card border-0 shadow mt-4">
+                    <img src="${entry.image}" class="card-img-top" alt="Modal Image">
+                    <div class="card-body">
+                        <h5 class="card-title">${entry.title}</h5>
+                        <p class="card-text">${entry.content}</p>
+                        <button onclick="editEntry(${index})">Editar</button>
+                        <button onclick="deleteEntry(${index})">Eliminar</button>
+                    </div>
+                </div>
                 `;
                 blogList.appendChild(listItem);
             });
@@ -32,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Eliminamos el modal después de enviar los datos a través del formulario
-    // TODO: implementar una mejor solución
+    // TAREA EXTRA: implementar una mejor solución
     function removeModal() {
         document.getElementById('closeButton').click();
     }
@@ -56,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
     });
 
-    // PARA ESTUDIANTES: Tarea 1
+    // PARA ESTUDIANTES: TAREA 1
     // Utilizar modal de Bootstrap
     window.editEntry = function (index) {
         const updatedTitle = prompt('Editar título:', entries[index].title);
@@ -70,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // PARA ESTUDIANTES: Tarea 2
+    // PARA ESTUDIANTES: TAREA 2
     // Utilizar modal de Bootstrap
     window.deleteEntry = function (index) {
         const confirmDelete = confirm('¿Estás seguro de eliminar esta entrada?');
