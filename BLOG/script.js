@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', function () {
             entries.forEach(function (entry, index) {
 
                 const listItem = document.createElement('div');
+
+                // TAREA: Chequear si la imagen que se provee existe
                 if (entry.image == '') {entry.image ='img/fallback.jpeg'}
 
                 listItem.innerHTML = `
@@ -44,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Eliminamos el modal después de enviar los datos a través del formulario
-    // TAREA EXTRA: implementar una mejor solución
+    // TAREA: implementar una mejor solución
     function removeModal() {
         document.getElementById('closeButton').click();
     }
@@ -68,22 +70,22 @@ document.addEventListener('DOMContentLoaded', function () {
         
     });
 
-    // PARA ESTUDIANTES: TAREA 1
-    // Utilizar modal de Bootstrap
+    // TAREA: Utilizar modal de Bootstrap
     window.editEntry = function (index) {
         const updatedTitle = prompt('Editar título:', entries[index].title);
+        const updatedImage = prompt('Editar título:', entries[index].image);
         const updatedContent = prompt('Editar contenido:', entries[index].content);
 
         if (updatedTitle !== null && updatedContent !== null) {
             entries[index].title = updatedTitle;
+            entries[index].image = updatedImage;
             entries[index].content = updatedContent;
             localStorage.setItem('blogEntries', JSON.stringify(entries));
             renderEntries();
         }
     };
 
-    // PARA ESTUDIANTES: TAREA 2
-    // Utilizar modal de Bootstrap
+    // TAREA: Utilizar modal de Bootstrap
     window.deleteEntry = function (index) {
         const confirmDelete = confirm('¿Estás seguro de eliminar esta entrada?');
         if (confirmDelete) {
