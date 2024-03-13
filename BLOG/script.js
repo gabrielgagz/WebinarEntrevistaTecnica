@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <h5 class="card-title">${entry.title}</h5>
                         <p class="card-text">${entry.content}</p>
                         <button class="btn btn-outline-success btn-list-edit" onclick="editEntry(${index})">Editar</button>
-                        <button class="btn btn-outline-danger btn-list-delete align-items-right" onclick="deleteEntry(${index})">Eliminar</button>
+                        <button class="btn btn-outline-danger btn-list-delete" onclick="deleteEntry(${index})">Eliminar</button>
                     </div>
                 </div>
                 `;
