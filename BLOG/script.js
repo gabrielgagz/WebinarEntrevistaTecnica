@@ -22,7 +22,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Escribimos los elementos
             entries.forEach(function (entry, index) {
+
                 const listItem = document.createElement('div');
+                if (entry.image == '') {entry.image ='img/fallback.jpeg'}
+
                 listItem.innerHTML = `
                 <div class="card border-0 shadow mt-4">
                     <img src="${entry.image}" class="card-img-top" alt="Modal Image">
