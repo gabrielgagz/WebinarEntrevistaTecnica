@@ -41,3 +41,8 @@ html,body {
     font-size: 0.9rem;
     display:inline-block;
 }
+
+.btn-list-edit, .btn-list-delete {
+    padding: 0px 8px 0px 8px;
+    font-size: x-small;
+}
