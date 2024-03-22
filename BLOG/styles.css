@@ -39,7 +39,6 @@ html,body {
 
 .alert {
     font-size: 0.9rem;
-    display:inline-block;
 }
 
 .btn-list-edit, .btn-list-delete {

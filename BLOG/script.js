@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if ( entries.length == 0 ) {
             blogList.innerHTML = `
-            <div class="d-flex justify-content-center">
+            <div class="d-flex alert">
                 <div class="alert alert-danger mt-4 text-center text-red" role="alert">
                     No se encontró ningún post para mostrar.
                 </div>
